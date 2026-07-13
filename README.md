@@ -56,6 +56,19 @@ sh train_regdb.sh
 ```shell
 sh test_regdb.sh
 ```
+
+
+LLCM:
+
+1. Train:
+:
+```shell
+sh train_llcm.sh
+```
+
+2. Test:
+```shell
+sh test_llcm.sh
 ## Repository Structure
 
 ```text
@@ -76,70 +89,5 @@ PSDN/
 +-- run_vecm.sh                # Example training script
 ```
 
-
-
-## Supported Datasets
-
-The code supports common unsupervised visible-infrare person re-identification datasets:
-
-```text
-SYSU-MM01
-RegDB
-LLCM
-```
-
-Set `--root_dir` to the dataset root path. The corresponding dataset reader should provide image paths, text descriptions, and identity labels.
-
-During training, noisy image-text correspondences can be injected or loaded using `--noisy_rate` and `--noisy_file`.
-
-
-## Evaluation
-
-Before evaluation, edit the `sub` variable in `test.py` and set it to the training output directory, for example:
-
-```text
-run_logs/RSTPReid/202xxxxx_VECM_TAL+...
-```
-
-Then run:
-
-```bash
-python test.py
-```
-
-The evaluator reports three retrieval settings:
-
-```text
-BGE      # global image-text features
-TSE      # local enhanced features
-BGE+TSE  # fused global and local similarities
-```
-
-Metrics:
-
-```text
-Rank-1
-Rank-5
-Rank-10
-mAP
-mINP
-```
-
-
-## Main Options
-
-### Basic Training Options
-
-```text
---pretrain_choice      CLIP pretrained model, default: ViT-B/16
---img_size             Input image size, default in code: (384, 128)
---stride_size          ViT patch stride, default: 16
---text_length          Maximum text token length, default: 77
---batch_size           Training batch size, default: 64
---test_batch_size      Evaluation batch size, default: 512
---select_ratio         TSE token selection ratio, default: 0.3
---tau                  TAL temperature, default: 0.015
---margin               TAL margin, default: 0.1
-```
 
 
