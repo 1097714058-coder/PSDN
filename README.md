@@ -69,6 +69,8 @@ sh train_llcm.sh
 2. Test:
 ```shell
 sh test_llcm.sh
+
+
 ## Repository Structure
 
 ```text
