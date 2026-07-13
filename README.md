@@ -19,7 +19,7 @@ The framework contains two main modules:
 
 
 # Prepare Datasets
-Put SYSU-MM01 and RegDB dataset into data/sysu data/regdb and data/llcm, run prepare\_sysu.py and prepare\_regdb.py to prepare the training data (convert to market1501 format).
+Put SYSU-MM01 and RegDB dataset into data/sysu and data/regdb , run prepare\_sysu.py and prepare\_regdb.py to prepare the training data (convert to market1501 format).
 
 # Prepare Pre-trained model
 We adopt the self-supervised pre-trained models (ViT-B/16+ICS) from [Self-Supervised Pre-Training for Transformer-Based Person Re-Identification](https://github.com/damo-cv/TransReID-SSL?tab=readme-ov-file).
@@ -69,27 +69,6 @@ sh train_llcm.sh
 2. Test:
 ```shell
 sh test_llcm.sh
-
-
-## Repository Structure
-```text
-PSDN/
-+-- datasets/              # Dataset loading, preprocessing, and samplers
-+-- model/
-|   +-- build.py           # Main PSDN model definition and forward pipeline
-|   +-- backbone.py        # TransReID ViT feature extraction backbone
-|   +-- als_module.py      # Adaptive Label Smooth (ALS) global denoising
-|   +-- sms_module.py      # Soft Margin Smooth (SMS) local boundary refinement
-|   +-- objectives.py      # Contrastive loss, ALS loss and SMS loss functions
-+-- processor/
-|   +-- processor.py       # Training, inference, pseudo-label denoising logic
-+-- solver/                # Optimizer and learning-rate scheduler config
-+-- utils/                 # Args parser, logging, evaluation metrics, helper tools
-+-- train.py               # Training entry script
-+-- test.py                # Evaluation & testing entry script
-+-- rank.py                # Retrieval ranking visualization
-+-- train_psdn.sh          # Training run script
-+-- test_llcm.sh           # Test script for LLCM dataset
 
 
 
