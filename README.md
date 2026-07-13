@@ -70,5 +70,3 @@ sh train_llcm.sh
 ```shell
 sh test_llcm.sh
 
-
-
