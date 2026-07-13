@@ -7,7 +7,7 @@ The task of this paper is unsupervised visible-infrared person re-identification
 ## overview
 
 The framework of our work is illustrated as follows:
-[<img width="4252" height="2250" alt="framework" src="https://github.com/1097714058-coder/PSDN/issues/1#issue-4870728698" />]
+<img width="1147" height="757" alt="Image" src="https://github.com/user-attachments/assets/5093b6dc-5160-47ef-9bbb-444be42681dd" />
 The framework contains two main modules:
 1. **ALS: Aptive Label Smooth**
 
